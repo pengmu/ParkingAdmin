@@ -1,0 +1,60 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contoso Task Pane Add-in</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+    <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
+
+    <!-- Template styles -->
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css" rel="stylesheet">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script> </head>
+	<script type="text/javascript">
+			$(document).ready(function() {
+				$( "#datepicker" ).datepicker({
+					multidate: true,
+					startDate: '+1d',
+					endDate: '+30d',
+					daysOfWeekDisabled: [0,6],
+					todayHighlight: true,
+					format: 'dd-mm-yyyy'
+				});
+		})
+	</script>
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter">
+        <h3 class="ms-font-su" style="font-size:24px">Book Your Parking in Basel</h3>
+    </header>
+	<p></p>
+    <div class="input-group mb-3" id="datepicker-container">
+		<div class="input-group-prepend">
+			<span class="input-group-text"  style="display: inline-block; width: 100px;" id="basic-addon1">Date</span>
+		</div>
+		<input id="datepicker" class="form-control" type="text">
+	</div>
+	
+	<main id="app-body" class="ms-welcome__main" >
+		<div role="button" id="run">
+			<!--<span class="ms-Button-label">Create Page</span>-->
+			<button type="button" class="btn btn-outline-primary">Book</button>
+		</div>
+	</main>
+</body>
+
+</html>
