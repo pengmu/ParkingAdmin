@@ -1,4 +1,4 @@
-From httpd:2.4-alpine
+FROM httpd:2.4-alpine
 #Copy distributed contents generated from webpack
 COPY ./dist/ /usr/local/apache2/htdocs/
 COPY ./assets /usr/local/apache2/htdocs/assets
