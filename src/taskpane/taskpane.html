@@ -10,8 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contoso Task Pane Add-in</title>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+	<script src="/assets/MicrosoftAjax.js"></script>  
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>  
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script> 
+	
     <!-- Office JavaScript API -->
-    <script type="text/javascript" src="/assets/office-js/dist/office.js"></script>
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
     <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
@@ -20,9 +26,6 @@
     <link href="taskpane.css" rel="stylesheet" type="text/css" />
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">  
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css" rel="stylesheet">  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script> </head>
 	<script type="text/javascript">
 			$(document).ready(function() {
 				$( "#datepicker" ).datepicker({
@@ -39,7 +42,7 @@
 
 <body class="ms-font-m ms-welcome ms-Fabric">
     <header class="ms-welcome__header ms-bgColor-neutralLighter">
-		<img width="60" height="60" src="../../assets/parking.jpg" title="parking" />
+		<img width="60" height="60" src="/assets/parking.jpg" title="parking" />
         <h3 class="ms-font-su" style="font-size:24px">Book Your Parking in Basel</h3>
     </header>
 	<p></p>
@@ -47,7 +50,20 @@
 		<div class="input-group-prepend">
 			<span class="input-group-text"  style="display: inline-block; width: 100px;" id="basic-addon1">Date</span>
 		</div>
+		
 		<input id="datepicker" class="form-control" type="text">
+	</div>
+	<div id="init_console">
+		
+	</div>
+	<div id="status_console">
+		
+	</div>
+	<div id="jquery_console">
+		
+	</div>
+	<div id="msg_console">
+		
 	</div>
 	
 	<main id="app-body" class="ms-welcome__main" >
